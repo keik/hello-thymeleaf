@@ -6,6 +6,7 @@
     <style>
       table {border-collapse: collapse;}
       th, td {padding: 4px; border: 1px solid #ccc;}
+      td ul {padding: 0; list-style: none;}
     </style>
   </head>
   <body>
@@ -38,23 +39,45 @@
             <th>ISBN</th>
             <th>Title</th>
             <th>Publisher</th>
+            <th>Authors</th>
           </tr>
         </thead>
-        <tbody th:each="book : ${books}" th:remove="all-but-first">
-          <tr>
+        <tbody>
+          <tr th:each="book : ${books}">
             <td th:text="${book.isbn}">ISBNnnn-n-nnnn-nnnn-n</td>
             <td th:text="${book.title}">THE_TITLE_1</td>
             <td th:text="${book.publisher}">THE_PUBLISHER_1</td>
+            <td>
+              <ul>
+                <li th:each="author : ${book.authors}" th:text="${author}">AUTHOR_1-1</li>
+                <li th:remove="all">AUTHOR_2-2</li>
+                <li th:remove="all">AUTHOR_2-3</li>
+              </ul>
+            </td>
           </tr>
-          <tr>
+          <tr th:remove="all">
             <td>ISBNnnn-n-nnnn-nnnn-n</td>
             <td>THE_TITLE_2</td>
             <td>THE_PUBLISHER_2</td>
+            <td>
+              <ul>
+                <li>AUTHOR_2-1</li>
+                <li>AUTHOR_2-2</li>
+                <li>AUTHOR_2-3</li>
+              </ul>
+            </td>
           </tr>
-          <tr>
+          <tr th:remove="all">
             <td>ISBNnnn-n-nnnn-nnnn-n</td>
             <td>THE_TITLE_3</td>
             <td>THE_PUBLISHER_3</td>
+            <td>
+              <ul >
+                <li>AUTHOR_3-1</li>
+                <li>AUTHOR_3-2</li>
+                <li>AUTHOR_3-3</li>
+              </ul>
+            </td>
           </tr>
         </tbody>
       </table>

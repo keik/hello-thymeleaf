@@ -1,5 +1,7 @@
 package net.example.hello_thymeleaf.domain.model;
 
+import java.util.List;
+
 public class Book {
 
     /** ISBN */
@@ -10,6 +12,9 @@ public class Book {
 
     /** Publisher */
     private String publisher;
+
+    /** Authors */
+    private List<String> authors;
 
     /**
      * Default constructor
@@ -23,10 +28,11 @@ public class Book {
      * @param title Title
      * @param publisher Publisher
      */
-    public Book(String isbn, String title, String publisher) {
+    public Book(String isbn, String title, String publisher, List<String> authors) {
         this.isbn = isbn;
         this.title = title;
         this.publisher = publisher;
+        this.authors = authors;
     }
 
     public void setIsbn(String isbn) {
@@ -46,5 +52,11 @@ public class Book {
     }
     public String getPublisher() {
         return this.publisher;
+    }
+    public void setAuthors(List<String> authors) {
+        this.authors = authors;
+    }
+    public List<String> getAuthors() {
+        return this.authors;
     }
 }
