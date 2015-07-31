@@ -7,15 +7,15 @@ Spring MVC + Thymeleaf sample with minimum archtecture
 
 To run with Thymeleaf version:
 
-    git checkout perf-1.0.0-thymeleaf
-    mvn tomcat7:run
-    ./jmeter.sh -t hello-thymeleaf.jmx -n -Jhost localhost -Jport 8080 -Jroot "/hello-thymeleaf" -Jtest_id 1 -Jloop1 10 -Jloop2 10
+    % git checkout perf-1.0.0-thymeleaf
+    % mvn tomcat7:run
+    % ./jmeter.sh -t hello-thymeleaf.jmx -n -Jhost localhost -Jport 8080 -Jroot "/hello-thymeleaf" -Jtest_id 1 -Jloop1 10 -Jloop2 10
 
 To run with JSP version:
 
-    git checkout perf-1.0.0-jsp
-    mvn tomcat7:run
-    ./jmeter.sh -t hello-thymeleaf.jmx -n -Jhost localhost -Jport 8080 -Jroot "/hello-thymeleaf" -Jtest_id 1 -Jloop1 10 -Jloop2 10
+    % git checkout perf-1.0.0-jsp
+    % mvn tomcat7:run
+    % ./jmeter.sh -t hello-thymeleaf.jmx -n -Jhost localhost -Jport 8080 -Jroot "/hello-thymeleaf" -Jtest_id 1 -Jloop1 10 -Jloop2 10
 
 
 ### variables
@@ -23,7 +23,7 @@ To run with JSP version:
 JMeter `-J` options can set user variables, like `-Jtest_id 1` . Available variables are:
 
 |Name|Default|description|
-|-|-|-|
+|---|---|---|
 |host|localhost|Host name.|
 |port|8080|Port number.|
 |root|"/hello-thymeleaf"|Context root path.|
